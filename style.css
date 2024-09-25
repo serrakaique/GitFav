@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 62.5%;
+
+    --primary-color: 240;
+    --secundary-color: 191;
+    --third-color: 194;
+    --bg-body: hsl(0, 0%, 0%);
+    --bg-input: hsl(var(--secundary-color), 65%, 7%);
+    --color-text-input: hsl(var(--primary-color), 6%, 51%);
+    --bg-button-fav:hsl(195, 91%, 25%);
+    --color-fill: hsl(0, 0%, 100%);
+    --bg-header-table: hsl(var(--third-color), 72%, 13%);
+    --color-text-table: hsl(var(--primary-color), 9%, 89%);
+    --boder-table: hsl(var(--secundary-color), 31%, 42%);
+    --color-remove: hsl(355, 91%, 66%);
+    --color-remove-hover: hsl(355deg 94% 73%);
+    --bg-table-1: hsla(var(--third-color), 64%, 6%, 0.5);
+    --bg-table-2: hsl(var(--secundary-color), 65%, 7%);
+    --color-zero-favorites: hsl(189, 4%, 32%);
+}
+body {
+    background-color: var(--bg-body);
+    font-size: 1.6rem;
+}
+body * {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text-table);
+}
+
+.container {
+    width: min(112rem, 95%);
+    margin: 0 auto;
+    padding: calc(3.2rem + 7vh) 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8.7rem;
+}
+.sr-only {
+    position: absolute;
+    width: 1;
+    height: 1;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.searchGithub {
+    display: flex;
+    gap: .8rem;
+}
+.searchGithub input {
+    width: clamp(15rem, 30vw, 46.2rem);
+    background-color: var(--bg-input);
+    color: var(--color-text-input);
+    border: none;
+    border-radius: .5rem;
+    padding: 1.6rem;
+}
+
+.searchGithub input:focus-visible {
+    outline: 2px solid var(--bg-button-fav);
+}
+.searchGithub button {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 3.2rem;
+    border-radius: .5rem;
+    background-color: var(--bg-button-fav);
+    border: none;
+    gap: .8rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--color-fill);
+    font-size: 1.4rem;
+    transition: all .2s;
+}
+.searchGithub button:hover {
+    background-color: var(--color-fill);
+    color: var(--bg-button-fav);
+}
+.searchGithub button:hover svg path {
+    transition: all .2s;
+    fill: var(--bg-button-fav);
+}
+.bg-table {
+    border: 1px solid var(--boder-table);
+    overflow: hidden;
+    border-radius: 1.2rem
+}
+table, table button {
+    font-size: 2rem;
+    font-weight: 700;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table thead {
+    background-color: var(--bg-header-table);
+    text-align: left;
+}
+
+thead tr th {
+    padding: 1.6rem 0;
+}
+thead tr {
+    display: flex;
+}
+tbody{
+    display: flex;
+    flex-direction: column;  
+    width: 100%;
+    max-height: 52.2rem;
+    overflow-y: overlay;
+  }  
+tbody::-webkit-scrollbar {
+    width: .6rem;
+    cursor: pointer;
+}
+tbody::-webkit-scrollbar-thumb  {
+    background-color: #4A808C;
+    border-radius: 10px;
+    cursor: pointer;
+}
+tbody::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+tbody tr {
+    display: flex;
+    align-items: center;
+}
+thead tr th:nth-child(1),
+tbody tr td:nth-child(1) {
+    width: min(50.4rem, 43vw);
+    padding-left: 4rem;
+}
+thead tr th:nth-child(2),
+tbody tr td:nth-child(2) {
+    width: min(21.8rem, 21vw);
+}
+thead tr th:nth-child(3),
+tbody tr td:nth-child(3) {
+    width: min(21.8rem, 21vw);
+}
+thead tr th:nth-child(4),
+tbody tr td:nth-child(4) {
+    width: min(17.8rem, 15vw);
+}
+tbody .user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+.user a {
+    text-decoration: none;
+}
+.user a span {
+    font-weight: 400;
+}
+
+tbody .user img {
+    width: 5.6rem;
+    border-radius: 9999px;
+}
+tbody tr td {
+    padding: 2.4rem 0;
+}
+table tbody tr:nth-child(odd) {
+    background: var(--bg-table-1);
+  }
+table tbody tr:nth-child(even) {
+    background: var(--bg-table-2);
+}
+table tbody tr + tr {
+    border-top: 1px solid var(--boder-table);
+}
+tbody tr td .remove {
+    background-color: transparent;
+    border: none;
+    color: var(--color-remove);
+    cursor: pointer;
+    transition: all .2s;
+}
+.remove:hover {
+    color: var(--color-remove-hover);
+}
+.zeroFavorites {
+    display: flex;
+    height: 52.2rem;
+    justify-content: center;
+    align-items: center;
+}
+tbody tr.zeroFavorites td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 4rem;
+    padding: 0;
+    gap: 6rem;
+    width: min(112rem, 90%)
+}
+.zeroFavorites td p {
+    color: var(--color-zero-favorites);
+}

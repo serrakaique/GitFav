@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitFav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/main.js" defer type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./img/logo.svg" alt="Logo GitFav">
+            <div class="searchGithub">
+                <label class="sr-only" for="usernameGithubSearch">Buscar Usuario no Github</label>
+                <input id ="usernameGithubSearch" type="text" placeholder="Digite o Github username que quer favoritar">
+                <button>
+                    <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.5C12.3249 0.5 12.6128 0.709195 12.7133 1.01819L14.9824 8H22.5C22.8287 8 23.1191 8.21402 23.2164 8.52798C23.3137 8.84193 23.1952 9.18266 22.9241 9.36855L16.8295 13.5477L19.1794 20.5102C19.2837 20.8193 19.1762 21.1605 18.9134 21.354C18.6506 21.5474 18.2929 21.5488 18.0287 21.3573L12 16.9887L5.97133 21.3573C5.70709 21.5488 5.34938 21.5474 5.0866 21.354C4.82381 21.1605 4.71628 20.8193 4.82063 20.5102L7.17046 13.5477L1.07585 9.36855C0.804769 9.18266 0.686309 8.84193 0.783612 8.52798C0.880915 8.21402 1.17131 8 1.49999 8H9.01763L11.2867 1.01819C11.3871 0.709195 11.6751 0.5 12 0.5ZM12 3.67651L10.2758 8.98181C10.1753 9.2908 9.88739 9.5 9.56249 9.5H3.91994L8.48664 12.6315C8.76343 12.8213 8.88044 13.1718 8.77311 13.4898L6.99287 18.7646L11.5599 15.4552C11.8225 15.2649 12.1775 15.2649 12.4401 15.4552L17.0071 18.7646L15.2269 13.4898C15.1196 13.1718 15.2366 12.8213 15.5133 12.6315L20.08 9.5H14.4375C14.1126 9.5 13.8246 9.2908 13.7242 8.98181L12 3.67651Z" fill="white"/>
+                    </svg>
+                    FAVORITAR
+                </button>
+            </div>
+        </header>
+        <div class="bg-table">
+            <table>
+            <thead>
+                <tr>
+                    <th class="userHead">Usuário</th>
+                    <th>Repositories</th>
+                    <th>Followers</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="favorites">    
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+</html>
